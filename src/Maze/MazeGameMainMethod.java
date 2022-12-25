@@ -6,6 +6,8 @@ package Maze;
  * and open the template in the editor.
  */
 
+import static Maze.EasyLevel.pla;
+import static Maze.Sounds.playMusic;
 import com.sun.opengl.util.FPSAnimator;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -35,19 +37,28 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
 ////        JOptionPane.showMessageDialog(null, "Choose Level");
 //        JOptionPane.showMessageDialog(null, "Let's play");
 
+
+                
+
 // show what we've done
         SwingUtilities.invokeLater(
                 new Runnable() {
             public void run() {
-                app.setVisible(true);
+                
+                app.setVisible(true);     
+                
+
+
             }
+            
+      
         }
         );
     }
 
     public MazeGameMainMethod() {
 //set the JFrame title
-        super("Maze Game");
+        super("Maze");
 
 //kill the process when the JFrame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
