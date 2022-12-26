@@ -30,6 +30,7 @@ public class EasyLevel implements GLEventListener {
     int counter=0;                                                                      
  boolean a=true , b=true , c=true , d =true, e=true ,f=true ,g=true ,k=true ,l=true ,m= true ;   // take coins or not
  String filepath="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\Arcade-background-music-retro-style.wav";
+ String filepath2="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\wak.wav";
 
  
  
@@ -215,11 +216,11 @@ public class EasyLevel implements GLEventListener {
                 honka = 0;
             }
         }     
-        for (int i = 0; i < 1; i++) {
-            {
-                System.out.print(" { " + buffer_px + " , " + buffer_py + '}' + " , ");
-            }
-        }
+//        for (int i = 0; i < 1; i++) {
+//            {
+//                System.out.print(" { " + buffer_px + " , " + buffer_py + '}' + " , ");
+//            }
+//        }
         //اول اما يلاقي الحاجز يوقف علطول 
         if (honka == 0) {
             gl.glPushMatrix();
@@ -242,6 +243,12 @@ public class EasyLevel implements GLEventListener {
             red = 1.0f;
             blue = 0.0f;
             counter-=5;
+//            
+//                playMusic(filepath);
+//                pla.clip.start();
+//                
+            
+            
         }
         else {
             gl.glPushMatrix();
@@ -349,15 +356,22 @@ public class EasyLevel implements GLEventListener {
             blue = 1.0f;
             green = 0.0f;
             red = 0.0f;
-            if (blue == 1.0f) {
-                JOptionPane.showMessageDialog(null, "Good Job ♥ " + name);
                 if(counter>0){
+                    
+                JOptionPane.showMessageDialog(null, "Good Job ♥ " + name);
                 JOptionPane.showMessageDialog(null, "You Win \n Your Score is ☺ " + counter);
                 }
-                else  JOptionPane.showMessageDialog(null, "You lost  " + -1*counter);
-
-                System.exit(0);
+                else {
+                    
+                    playMusic(filepath2);
+                    pla.clip.start();
+            
+                    JOptionPane.showMessageDialog(null, "You lost  " + -1*counter);
+                    
+                     System.exit(0);
             }
+
+            
 
         }
         
@@ -427,36 +441,3 @@ public class EasyLevel implements GLEventListener {
 
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-  //الكوره بتاعت النهاية 
-        gl.glPushMatrix();
-        gl.glTranslated(139.0, -106, 0);
-        gl.glColor3f(0.0f, 0.0f, 1.00f);
-        double x2, y2;
-        double radius1 = 16;
-//        gl.glBegin(GL.GL_LINE_STRIP);
-        gl.glBegin(GL.GL_POLYGON);
-        for (double a = 0; a < THREE_SIXTY; a += ONE_DEGREE) {
-            x2 = radius1 * (Math.cos(a));
-            y2 = radius1 * (Math.sin(a));
-            gl.glVertex2d(x2, y2);
-        }
-        gl.glEnd();
-        gl.glPopMatrix();
-
-*/
