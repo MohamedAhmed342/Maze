@@ -11,6 +11,7 @@ import javax.sound.sampled.*;
  */
 public class Sounds {
        static Sounds pl =new Sounds();
+       static Sounds pl2 =new Sounds();
         static Clip clip;
 
         private Sounds()
@@ -20,6 +21,10 @@ public class Sounds {
 
         public static Sounds getInstance(){
         return pl;
+        }
+        
+        public static Sounds getInstance2(){
+        return pl2;
         }
 
      public static void playMusic(String location) {

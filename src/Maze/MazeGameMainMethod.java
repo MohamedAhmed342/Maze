@@ -5,7 +5,7 @@ package Maze;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import static Maze.EasyLevel.pla2;
 import static Maze.EasyLevel.pla;
 import static Maze.Sounds.playMusic;
 import com.sun.opengl.util.FPSAnimator;
@@ -29,9 +29,18 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
 
     GLCanvas gl;
     EasyLevel listner = new EasyLevel();
+    
 
     public static void main(String[] args) {
         final MazeGameMainMethod app = new MazeGameMainMethod();
+        
+        
+//         String MazeMusic="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\FinalBattle.wav";
+//         playMusic(MazeMusic);
+//         pla2.clip.start();
+         
+        
+
 //        JOptionPane.showMessageDialog(null, "Under leadership of \nProfessor: Mohammed El-Gayar \n& Professor:Hend Dawood");
 //        JOptionPane.showMessageDialog(null, "How to play ;)  \n use arrow up , down , left and right\n to move and reach to final destination\n any errors call me \n G.M. MYehia:01113649361 \n& his parteners...");
 ////        JOptionPane.showMessageDialog(null, "Choose Level");

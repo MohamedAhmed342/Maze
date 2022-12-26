@@ -29,12 +29,21 @@ public class EasyLevel implements GLEventListener {
     int angle = -10;
     int counter=0;                                                                      
  boolean a=true , b=true , c=true , d =true, e=true ,f=true ,g=true ,k=true ,l=true ,m= true ;   // take coins or not
- String filepath="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\Arcade-background-music-retro-style.wav";
- String filepath2="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\wak.wav";
+ String coins="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\coins.wav";
+ String gameover="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\gameover.wav";
+ String Winning="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\Winning.wav";
+ String TakeDamage="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\TakeDamage.wav";
+ 
+//
+//  String filepath2="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\wak.wav";
+// String coins="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\coins.wav";
 
  
  
+ 
     static Sounds pla = Sounds.getInstance();
+    static Sounds pla2 = Sounds.getInstance2();
+
     static long clpos;
     static boolean isp = true;
     static boolean isL = false;
@@ -247,7 +256,8 @@ public class EasyLevel implements GLEventListener {
 //                playMusic(filepath);
 //                pla.clip.start();
 //                
-            
+                  playMusic(TakeDamage);
+                  pla.clip.start();
             
         }
         else {
@@ -296,48 +306,67 @@ public class EasyLevel implements GLEventListener {
                 
                   a= false ;
                   counter+=10;
+                  playMusic(coins);
+                  pla.clip.start();
             }
             
             if (buffer_px ==  -141.0 && buffer_py ==-16.0 && b==true ) {
                   b=false ;
                   counter+=10;
+                  playMusic(coins);
+                  pla.clip.start();
 
             }
             
             if (buffer_px == 59.0 && buffer_py ==104.0 && c==true ) {
                   c=false ;
                   counter+=10;
-                  
+                  playMusic(coins);
+                  pla.clip.start();
             }
             
             if (buffer_px == 59.0 && buffer_py == -16.0 && d==true  ) {
                   d=false ;
                   counter+=10;
+                  playMusic(coins);
+                  pla.clip.start();
             }
             
             if (buffer_px == 139.0 && buffer_py == 14.0 && f==true  ) {
                   f=false ;
                   counter+=10;
+                  playMusic(coins);
+                  pla.clip.start();
             }
             
             if (buffer_px == -16.0 && buffer_py == 14.0 && e==true  ) {
                   e=false ;
                   counter+=10;
+                  playMusic(coins);
+                  pla.clip.start();
+            
+            
             }
             
             if (buffer_px == 29.0 && buffer_py == 104.0 && k==true  ) {
                   k=false ;
                   counter+=10;
+                  playMusic(coins);
+                  pla.clip.start();
             }
             
             if (buffer_px == -71.0  && buffer_py == 104.0 && l==true  ) {
                   l=false ;
                   counter+=10;
+                  playMusic(coins);
+                  pla.clip.start();
             }
             
             if (buffer_px == -66.0  && buffer_py == -16.0 && m==true  ) {
                   m=false ;
                   counter+=10;
+                  playMusic(coins);
+                  pla.clip.start();
             }
             
 
@@ -353,23 +382,31 @@ public class EasyLevel implements GLEventListener {
 
         if (px == 139.0 && py == -91.0 || px == 139.0 && py == -96.0 ||  px == 129.0 && py == -91.0 ||  px == 134.0 && py == -91.0  || px == 129.0 && py == -91.0 || px == 139.0 && py == -96.0 || px == 144.0 && py == -96.0  || px == 149.0 && py == -96.0 || px == 149.0 && py == -101.0   ) 
          {
+//             clpos = pla2.clip.getMicrosecondPosition();clpos = pla.clip.getMicrosecondPosition();
+//            pla2.clip.stop();pla.clip.stop();         
+
             blue = 1.0f;
             green = 0.0f;
             red = 0.0f;
                 if(counter>0){
+                    
+                    playMusic(Winning);
+                    pla.clip.start(); 
                     
                 JOptionPane.showMessageDialog(null, "Good Job ♥ " + name);
                 JOptionPane.showMessageDialog(null, "You Win \n Your Score is ☺ " + counter);
                 }
                 else {
                     
-                    playMusic(filepath2);
+                    playMusic(gameover);
                     pla.clip.start();
             
                     JOptionPane.showMessageDialog(null, "You lost  " + -1*counter);
                     
-                     System.exit(0);
             }
+                
+                
+                System.exit(0);
 
             
 
