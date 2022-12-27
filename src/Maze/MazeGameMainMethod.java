@@ -5,8 +5,8 @@ package Maze;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import static Maze.HardLevel.pla;
-
+import static Maze.EasyLevel.pla2;
+import static Maze.EasyLevel.pla;
 import static Maze.Sounds.playMusic;
 import com.sun.opengl.util.FPSAnimator;
 import java.awt.BorderLayout;
@@ -28,29 +28,18 @@ import javax.swing.SwingUtilities;
 public class MazeGameMainMethod extends JFrame implements KeyListener {
 
     GLCanvas gl;
- HardLevel listner = new HardLevel();
-    
-    
+//    EasyLevel listner = new EasyLevel();
+    HardLevel listner = new HardLevel();
+
 
     public static void main(String[] args) {
         final MazeGameMainMethod app = new MazeGameMainMethod();
-        
-        
+
 //         String MazeMusic="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\FinalBattle.wav";
 //         playMusic(MazeMusic);
 //         pla2.clip.start();
-         
-        
+//         
 
-//        JOptionPane.showMessageDialog(null, "Under leadership of \nProfessor: Mohammed El-Gayar \n& Professor:Hend Dawood");
-//        JOptionPane.showMessageDialog(null, "How to play ;)  \n use arrow up , down , left and right\n to move and reach to final destination\n any errors call me \n G.M. MYehia:01113649361 \n& his parteners...");
-////        JOptionPane.showMessageDialog(null, "Choose Level");
-//        JOptionPane.showMessageDialog(null, "Let's play");
-
-
-                
-
-// show what we've done
         SwingUtilities.invokeLater(
                 new Runnable() {
             public void run() {
@@ -67,22 +56,20 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
     }
 
     public MazeGameMainMethod() {
-//set the JFrame title
+
         super("Maze");
 
-//kill the process when the JFrame is closed
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//only three JOGL lines of code ... and here they are
+
         GLCapabilities glcaps2 = new GLCapabilities();
-        gl = new GLCanvas(glcaps2);//GLDrawableFactory.getFactory().creategl(glcaps);
+        gl = new GLCanvas(glcaps2);
         gl.addGLEventListener(
                 listner
         );
         gl.addKeyListener(this);
-//add the gl just like we would any Component
         getContentPane().add(gl, BorderLayout.CENTER);
         setSize(1230, 700);
-//center the JFrame on the screen
         centerWindow(this);
     }
 
@@ -105,16 +92,10 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
     
         @Override
     public void keyTyped(KeyEvent ke) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//        if (ke.getKeyCode() == KeyEvent.VK_RIGHT) {
-//            listner.px += 10;
-//            gl.repaint();
-//
-//        }
+
     }
     @Override
     public void keyPressed(KeyEvent ke) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         try {
             switch (ke.getKeyCode()) {
                 case KeyEvent.VK_DOWN:
@@ -146,7 +127,6 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
     }
 
     public void keyReleased(KeyEvent ke) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }    
     
     
