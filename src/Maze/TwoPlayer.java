@@ -45,7 +45,7 @@ public class TwoPlayer implements GLEventListener {
 //  String filepath2="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\wak.wav";
 // String coins="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\coins.wav";
     static Sounds pla = Sounds.getInstance();
-    static Sounds pla2 = Sounds.getInstance2();
+//    static Sounds pla2 = Sounds.getInstance2();
 
     static long clpos;
     static boolean isp = true;
@@ -506,8 +506,8 @@ else{
 
     void turnoff() {
         clpos = pla.clip.getMicrosecondPosition();
-        clpos = pla2.clip.getMicrosecondPosition();
-        pla2.clip.stop();
+//        clpos = pla2.clip.getMicrosecondPosition();
+//        pla2.clip.stop();
         pla.clip.stop();
     }
 

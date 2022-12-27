@@ -1,15 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Maze;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author power
  */
-
-import static Maze.EasyLevel.pla;
 import static Maze.HardLevel.pla;
-import static Maze.Sounds.playMusic;
-import com.sun.opengl.util.FPSAnimator;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -27,51 +26,49 @@ import javax.swing.SwingUtilities;
  *
  * @author lenovo
  */
-public class MazeGameMainMethod extends JFrame implements KeyListener {
+public class MazeGameMainMethod3 extends JFrame implements KeyListener {
 
     GLCanvas gl;
-    EasyLevel listner = new EasyLevel();
+    HardLevel listner = new HardLevel();
+    @Override
     public  void processWindowEvent(final WindowEvent e) {
-        
+        super.processWindowEvent(e);
 
         if (e.getID() == WindowEvent.WINDOW_CLOSING) {
             this.dispose();
             new Maze().setVisible(true);
         }
     }
-//
+
     public static void main(String[] args) {
-        final MazeGameMainMethod app = new MazeGameMainMethod();
-//        JOptionPane.showMessageDialog(null, "Under leadership of \nProfessor: Mohammed El-Gayar \n& Professor:Hend Dawood");
-//        JOptionPane.showMessageDialog(null, "How to play ;)  \n use arrow up , down , left and right\n to move and reach to final destination\n any errors call me \n G.M. MYehia:01113649361 \n& his parteners...");
-////        JOptionPane.showMessageDialog(null, "Choose Level");
-//        JOptionPane.showMessageDialog(null, "Let's play");
+        final MazeGameMainMethod3 app = new MazeGameMainMethod3();
 
 
-                
+
+
 
 // show what we've done
         SwingUtilities.invokeLater(
                 new Runnable() {
-            public void run() {
-                
-                app.setVisible(true);     
-                
+                    public void run() {
+
+                        app.setVisible(true);
 
 
-            }
-            
-      
-        }
+
+                    }
+
+
+                }
         );
     }
 
-    public MazeGameMainMethod() {
+    public MazeGameMainMethod3() {
 //set the JFrame title
         super("Maze");
 
 //kill the process when the JFrame is closed
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+   //     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //only three JOGL lines of code ... and here they are
         GLCapabilities glcaps2 = new GLCapabilities();
         gl = new GLCanvas(glcaps2);//GLDrawableFactory.getFactory().creategl(glcaps);
@@ -102,8 +99,8 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
         );
     }
 
-    
-        @Override
+
+    @Override
     public void keyTyped(KeyEvent ke) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //        if (ke.getKeyCode() == KeyEvent.VK_RIGHT) {
@@ -147,8 +144,8 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
 
     public void keyReleased(KeyEvent ke) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }    
-    
-    
-    
+    }
+
+
+
 }

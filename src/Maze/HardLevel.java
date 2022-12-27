@@ -30,11 +30,11 @@ public class HardLevel implements GLEventListener {
     int counter = 0;
     boolean aa = true, bb = true, cc = true, dd = true, ee = true, ff = true;
     boolean a=true , b=true , c=true , d =true, e=true ,f=true ,g=true ,k=true ,l=true ,m= true ; // take coins or not
-    String filepath = "E:\\games graphic\\Maze3\\Maze\\src\\Maze\\music\\Arcade-background-music-retro-style.wav";
-    String coins = "E:\\games graphic\\Maze3\\Maze\\src\\Maze\\music\\coins.wav";
-    String gameover = "E:\\games graphic\\Maze3\\Maze\\src\\Maze\\music\\gameover.wav";
-    String Winning = "E:\\games graphic\\Maze3\\Maze\\src\\Maze\\music\\Winning.wav";
-    String TakeDamage = "E:\\games graphic\\Maze3\\Maze\\src\\Maze\\music\\TakeDamage.wav";
+    String filepath = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\Arcade-background-music-retro-style.wav";
+    String coins = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\src_Maze_music_coins.wav";
+    String gameover = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\src_Maze_music_gameover.wav";
+    String Winning = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\src_Maze_music_Winning.wav";
+    String TakeDamage = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\src_Maze_music_TakeDamage.wav";
     static Sounds pla = Sounds.getInstance();
     static long clpos;
     static boolean isp = true;
@@ -543,7 +543,6 @@ if (px == 18.0 && py == -96.0 || px ==13.0 && py == -96.0 ||  px == 8.0 && py ==
     }
 
 }
-
 
 
 
