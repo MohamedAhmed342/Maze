@@ -5,8 +5,8 @@ package Maze;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import static Maze.EasyLevel.pla2;
-import static Maze.EasyLevel.pla;
+import static Maze.TwoPlayer.pla2;
+import static Maze.TwoPlayer.pla;
 import static Maze.Sounds.playMusic;
 import com.sun.opengl.util.FPSAnimator;
 import java.awt.BorderLayout;
@@ -28,9 +28,8 @@ import javax.swing.SwingUtilities;
 public class MazeGameMainMethod extends JFrame implements KeyListener {
 
     GLCanvas gl;
-//    EasyLevel listner = new EasyLevel();
-    HardLevel listner = new HardLevel();
-
+    TwoPlayer listner = new TwoPlayer();
+//    HardLevel listner = new HardLevel();
 
     public static void main(String[] args) {
         final MazeGameMainMethod app = new MazeGameMainMethod();
@@ -39,18 +38,14 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
 //         playMusic(MazeMusic);
 //         pla2.clip.start();
 //         
-
         SwingUtilities.invokeLater(
                 new Runnable() {
             public void run() {
-                
-                app.setVisible(true);     
-                
 
+                app.setVisible(true);
 
             }
-            
-      
+
         }
         );
     }
@@ -58,7 +53,6 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
     public MazeGameMainMethod() {
 
         super("Maze");
-
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -89,37 +83,61 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
         );
     }
 
-    
-        @Override
+    @Override
     public void keyTyped(KeyEvent ke) {
 
     }
+
     @Override
     public void keyPressed(KeyEvent ke) {
         try {
-            switch (ke.getKeyCode()) {
-                case KeyEvent.VK_DOWN:
-                    listner.buffer_py -= 5;
-                    //listner.py -= 10;
-                    gl.repaint();
-                    break;
-                case KeyEvent.VK_UP:
-                    listner.buffer_py += 5;
-                    //listner.py += 10;
-                    gl.repaint();
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    listner.buffer_px += 5;
-                    //listner.px += 10;
-                    gl.repaint();
-                    break;
-                case KeyEvent.VK_LEFT:
-                    listner.buffer_px -= 5;
-                    //listner.px -= 10;
-                    gl.repaint();
-                    break;
+
+            if (ke.getKeyCode() == KeyEvent.VK_DOWN) {
+                listner.buffer_py -= 5;
+                //listner.py -= 10;
+                gl.repaint();
+            }
+            if (ke.getKeyCode() == KeyEvent.VK_UP) {
+                listner.buffer_py += 5;
+                //listner.py += 10;
+                gl.repaint();
+            }
+            if (ke.getKeyCode() == KeyEvent.VK_RIGHT) {
+                listner.buffer_px += 5;
+                //listner.px += 10;
+                gl.repaint();
 
             }
+            if (ke.getKeyCode() == KeyEvent.VK_LEFT) {
+                listner.buffer_px -= 5;
+                //listner.px -= 10;
+                gl.repaint();
+
+            }
+
+            if (ke.getKeyCode() == KeyEvent.VK_S) {
+                listner.buffer_py2 -= 5;
+                //listner.py -= 10;
+                gl.repaint();
+            }
+            if (ke.getKeyCode() == KeyEvent.VK_W) {
+                listner.buffer_py2 += 5;
+                //listner.py += 10;
+                gl.repaint();
+            }
+            if (ke.getKeyCode() == KeyEvent.VK_D) {
+                listner.buffer_px2 += 5;
+                //listner.px += 10;
+                gl.repaint();
+
+            }
+            if (ke.getKeyCode() == KeyEvent.VK_A) {
+                listner.buffer_px2 -= 5;
+                //listner.px -= 10;
+                gl.repaint();
+
+            }
+
         }// end switch    
         catch (Exception ee) {
             JOptionPane.showMessageDialog(null, "Error: " + ee.getMessage());
@@ -127,8 +145,6 @@ public class MazeGameMainMethod extends JFrame implements KeyListener {
     }
 
     public void keyReleased(KeyEvent ke) {
-    }    
-    
-    
-    
+    }
+
 }
