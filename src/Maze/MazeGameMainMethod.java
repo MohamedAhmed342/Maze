@@ -5,8 +5,8 @@ package Maze;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import static Maze.EasyLevel.pla2;
-import static Maze.EasyLevel.pla;
+import static Maze.HardLevel.pla;
+
 import static Maze.Sounds.playMusic;
 import com.sun.opengl.util.FPSAnimator;
 import java.awt.BorderLayout;
@@ -28,7 +28,8 @@ import javax.swing.SwingUtilities;
 public class MazeGameMainMethod extends JFrame implements KeyListener {
 
     GLCanvas gl;
-    EasyLevel listner = new EasyLevel();
+ HardLevel listner = new HardLevel();
+    
     
 
     public static void main(String[] args) {
