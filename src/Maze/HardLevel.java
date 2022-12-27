@@ -477,7 +477,7 @@ if (px == 18.0 && py == -96.0 || px ==13.0 && py == -96.0 ||  px == 8.0 && py ==
                 JOptionPane.showMessageDialog(null, "Good Job ♥ " + name);
                 JOptionPane.showMessageDialog(null, "You Win \n Your Score is ☺ " + counter);
             } else {
-
+                balance();
                 playMusic(gameover);
                 pla.clip.start();
 
@@ -533,6 +533,16 @@ if (px == 18.0 && py == -96.0 || px ==13.0 && py == -96.0 ||  px == 8.0 && py ==
         }
         gl.glEnd();
     }
+    
+    
+     void balance () {
+        if(counter<0)
+        {
+            counter=0;
+        
+       }
+    }
+
 
     @Override
     public void reshape(GLAutoDrawable glad, int i, int i1, int i2, int i3) {

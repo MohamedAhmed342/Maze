@@ -362,6 +362,8 @@ public class EasyLevel implements GLEventListener {
                 JOptionPane.showMessageDialog(null, "Good Job ♥ " + name);
                 JOptionPane.showMessageDialog(null, "You Win \n Your Score is ☺ " + counter);
             } else {
+                  
+                  balance();
 
                 playMusic(gameover);
                 pla.clip.start();
@@ -425,6 +427,15 @@ public class EasyLevel implements GLEventListener {
             gl.glVertex2d(r * Math.cos(Math.toRadians(i)), r * Math.sin(Math.toRadians(i)));
         }
         gl.glEnd();
+    }
+    
+    
+    void balance () {
+        if(counter<0)
+        {
+            counter=0;
+        
+       }
     }
 
     @Override

@@ -4,6 +4,8 @@
  */
 package Maze;
 
+import java.awt.event.WindowEvent;
+
 /**
  *
  * @author power
@@ -31,6 +33,12 @@ public class Instructions extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextPane3 = new javax.swing.JTextPane();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextPane2 = new javax.swing.JTextPane();
 
@@ -46,10 +54,30 @@ public class Instructions extends javax.swing.JFrame {
         jTextArea1.setDragEnabled(true);
         jScrollPane2.setViewportView(jTextArea1);
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Maze/kawanimals-star.gif"))); // NOI18N
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Maze/kawanimals-star.gif"))); // NOI18N
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1230, 700));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextPane2.setText("The Maze consists of some lines or barriers that must be avoided.\nMaze game follows some ideas to get out of it.\nHow do ?\nWe now have a small ball, we are trying to collect what can be collected in the small time of gold and get out as quickly as possible before the end of time and reach the star.");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Maze/star-stars.gif"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 60, 250, 170));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Maze/star-stars.gif"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+
+        jTextPane3.setBackground(new java.awt.Color(204, 204, 204));
+        jTextPane3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jTextPane3.setForeground(new java.awt.Color(204, 153, 0));
+        jTextPane3.setText("The Maze consists of some lines or barriers that must be avoided.\nMaze game follows some ideas to get out of it.\nHow do ?\nWe now have a small ball, we are trying to collect what can be collected in the small time of gold and get out as quickly as possible before the end of time and reach the star.");
+        jTextPane3.setEnabled(false);
+        jScrollPane4.setViewportView(jTextPane3);
+
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 510, 270));
+
         jTextPane2.setDragEnabled(false);
         jTextPane2.setFocusCycleRoot(false);
         jTextPane2.setFocusTraversalPolicyProvider(false);
@@ -58,11 +86,18 @@ public class Instructions extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTextPane2);
         jTextPane2.setEditable(false);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 230));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 1390, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ public  void processWindowEvent(final WindowEvent e) {
+        
 
+        if (e.getID() == WindowEvent.WINDOW_CLOSING) {
+            this.dispose();
+            new Maze().setVisible(true);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -93,6 +128,7 @@ public class Instructions extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
             public void run() {
                 new Instructions().setVisible(true);
                 
@@ -102,12 +138,18 @@ public class Instructions extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JTextPane jTextPane3;
     // End of variables declaration//GEN-END:variables
 }

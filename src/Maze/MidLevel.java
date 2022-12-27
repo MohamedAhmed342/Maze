@@ -461,7 +461,9 @@ public class MidLevel implements GLEventListener {
                     JOptionPane.showMessageDialog(null, "Good Job ♥ " + name);
                     JOptionPane.showMessageDialog(null, "You Win \n Your Score is ☺ " + counter);
                 }
-                else{  JOptionPane.showMessageDialog(null, "You lost  " + -1*counter);
+                else{ 
+                    balance();
+                    JOptionPane.showMessageDialog(null, "You lost  " + -1*counter);
 
                 System.exit(0);
             }
@@ -521,6 +523,13 @@ public class MidLevel implements GLEventListener {
 
 
 
+ void balance () {
+        if(counter<0)
+        {
+            counter=0;
+        
+       }
+    }
 
 
 

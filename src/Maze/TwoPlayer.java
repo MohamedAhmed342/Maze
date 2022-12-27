@@ -36,10 +36,10 @@ public class TwoPlayer implements GLEventListener {
     int counter = 0;
     int counter2=0;
     boolean a = true, b = true, c = true, d = true, e = true, f = true, g = true, k = true, l = true, m = true;   // take coins or not
-    String coins = "D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\coins.wav";
-    String gameover = "D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\gameover.wav";
-    String Winning = "D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\Winning.wav";
-    String TakeDamage = "D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\TakeDamage.wav";
+     String coins = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\src_Maze_music_coins.wav";
+    String gameover = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\src_Maze_music_gameover.wav";
+    String Winning = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\src_Maze_music_Winning.wav";
+    String TakeDamage = "E:\\New folder\\Maze2\\Maze\\src\\Maze\\music\\src_Maze_music_TakeDamage.wav";
 
 //
 //  String filepath2="D:\\Projects\\graphics\\Maze\\src\\Maze\\music\\wak.wav";
